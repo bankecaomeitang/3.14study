@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>let命令</h2>
+		<ul>
+			<li>基本语法</li>
+			<li>不存在变提升</li>
+			<li>暂时性死区</li>
+			<li>不允许重复声明</li>
+		</ul>
+		<h2>块级作用域</h2>
+		<ul>
+			<li>为什么需要块级作用域</li>
+			<li>块级作用域</li>
+			<li>const命令</li>
+		</ul>
+		<h2>const命令</h2>
+		<ul>
+			<li>基本用法</li>
+			<li>本质</li>
+		</ul>
+		<h2>顶层对象的属性</h2>
+		<h2>global对象</h2>
+		<script>
+			var a =[];
+			for(var i=0;i<10;i++){
+				a[i] = function(){
+					console.log(i);
+				}
+			}
+			console.log(a[6]());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			1
+			Array.prototype.method=function(){
+			　　console.log(this.length);
+			}
+			var myArray=[1,2,3,4,5,6,7];
+			myArray.name = "数组";
+			for(var index in myArray){
+				console.log(myArray[index]);
+			}
+			Array.prototype.method=function(){
+			　　console.log(this.length);
+			}
+			var myArray=[1,2,3,4,5,6,7];
+			myArray.name = "数组";
+			for(var index of myArray){
+				console.log(myArray[index]);
+			}
+
+//			2
+			Object.prototype.method = function(){
+				console.log(this);
+			}
+			var myObject = {
+				a:1,
+				b:2,
+				c:3
+			}
+			for(var key in myObject){
+				console.log(key);
+				if(myObject.hasOwnProperty(key)){
+				　　　　console.log(key);
+				　　}
+			}
+		</script>
+	</body>
+</html>

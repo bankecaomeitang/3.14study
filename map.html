@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.ceshi{border: none;border-bottom: 1px solid #000;outline: none;}
+		</style>
+	</head>
+	<body>
+		<input class="ceshi" type="text" />
+		<p>点击按钮将数组中的每个元素乘以输入框指定的值，并返回新数组</p>
+	    <p>
+	        最小年龄:
+	        <input type="number" id="age" value="10" />
+	    </p>
+	    <button id="btn">点我</button>
+	    <p id="data">新数组</p>
+	
+	    <script type="text/javascript">
+	        var btn = document.getElementById("btn");
+	        var data = document.getElementById("data");
+	        var age = document.getElementById("age");
+	        var numbers = [25,36,121,49];
+	
+	        function myFunction(num,index,arr){
+	            console.log(arr);
+	            return num * age.value;
+	        }
+	
+	        btn.onclick = function(num){
+	            data.innerHTML = numbers.map(myFunction);
+	        }
+	</body>
+</html>

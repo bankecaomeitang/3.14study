@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {};
+			var arr = [];
+			if(Array.prototype.isPrototypeOf(obj)){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+			if(Array.prototype.isPrototypeOf(arr)){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+			if(obj instanceof Array){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+			if(arr instanceof Array){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+			if(Array.isArray(obj)){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+			if(Array.isArray(arr)){
+				console.log("true");
+			}else{
+				console.log("false");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = "http://www.baidu.com/?a=1&b=2&c=3";
+			var myobj = function(str){
+				var arr1 = str.split('/?')[1].split('&');
+				var obj={};
+				for(let i=0;i<arr1.length;i++){
+					var arr2 = arr1[i].split('=');
+					obj[arr2[0]]=arr2[1];
+				}
+				return obj;
+			}
+			console.log(myobj(str));
+		</script>
+	</body>
+</html>

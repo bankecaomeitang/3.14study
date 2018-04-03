@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function fun(arr){
+				var i,len;
+				for(i=0,len=arr.length;i<len;i++){
+					(function(i){
+						setTimeout(function(){
+							console.log(i);
+						},i*1000);
+					})(i);
+				}
+			}
+			fun([1,2,3]);
+		</script>
+	</body>
+</html>

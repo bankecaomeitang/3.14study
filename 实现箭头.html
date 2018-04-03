@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.div01{width: 0;height: 0;border-width: 40px;border-style: solid;border-color: transparent transparent transparent #000;margin: 30px auto;}
+			.div02{width: 0;height: 0;border-top: 50px solid red;border-right: 50px solid transparent;margin: 0 auto;}
+			.div03{width: 100px;height: 0;border: 50px solid transparent;border-top: none;border-bottom: 100px solid red;margin: 0 auto;}
+			.div04{width: 150px;height: 100px;background:red;transform: skew(20deg);margin: 10px auto;}
+			.div05{width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid red;position: relative;margin: 100px auto;}
+			.div05:after{width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 100px solid red;position: absolute;content: "";top: 30px;left: -50px;}
+			.div06{width: 0;height: 0;border-left: 94px solid transparent;border-right: 94px solid transparent;border-top: 70px solid red;position: relative;margin: 0 auto;}
+			.div06:before{width: 0;height: 0;border-left: 94px solid transparent;border-right: 94px solid transparent;border-top: 70px solid red;position: absolute;content: "";left: -98px;top: -71px;transform: rotate(72deg);}
+			.div06:after{width: 0;height: 0;border-left: 94px solid transparent;border-right: 94px solid transparent;border-top: 70px solid red;position: absolute;content: "";left: -91px;top: -71px;transform: rotate(-71deg);}
+			.div07{width: 54px;border-width: 50px 18px 0;border-style: solid;border-color: red transparent;position: relative;margin: 100px auto;}
+			.div07:before{content: "";position: absolute;height: 0;width: 0;top: -85px;left: -18px;border-width: 0 45px 35px;border-style: solid;border-color: transparent transparent red;}
+			.div08{width: 100px;border-top: 58px solid red;position: relative;margin: 0 auto;}
+			.div08:before{content: "";position: absolute;width: 0;height: 0;border:50px solid transparent;border-bottom: 24px solid red;border-top: none;top: -82px;}
+			.div08:after{content: "";position: absolute;width: 0;height: 0;border:50px solid transparent;border-top: 24px solid red;border-bottom: none;top: 0;}
+			.div09{width: 100px;border-bottom: 43px solid red;position: relative;margin: 100px auto;}
+			.div09:before{content: "";width: 44px;border: 28px solid transparent;border-bottom: 28px solid red;border-top: none;position: absolute;top: -28px;}
+			.div09:after{content: "";width: 44px;border: 28px solid transparent;border-top: 28px solid red;border-bottom: none;position: absolute;top: 43px;}
+			.div10{position: relative;width: 100px;height: 90px;}
+			.div10:before,.div10:after{content: "";position: absolute;left: 50px;top: 0;width: 50px;height: 80px;background: red;border-radius: 50px 50px 0 0;transform: rotate(-45deg);transform-origin: 0 100%;}
+			.div10:after{left: 0;transform: rotate(45deg);transform-origin: 100% 100%;}
+			.div11{width: 212px;height: 100px;position: relative;}
+			.div11:before,.div11:after{content: "";width: 60px;height: 60px;position: absolute;left: 0;top: 0;border-radius: 50px 50px 0 50px;transform: rotate(-45deg);border: 20px solid red;}
+			.div11:after{left: auto;right: 0;border-radius: 50px 50px 50px 0;transform: rotate(45deg);}
+			.div12{width: 126px;height: 180px;background: red;border-radius: 50% 50% 50% 50% /60% 60% 40% 40%;margin: 50px auto;}
+			/*border-radius后有两组值，前边是水平半径，斜线后是垂直半径，当两者相等时是1/4的圆*/
+			.div13{width: 0;height: 0;border: 50px solid red;border-radius: 50%;border-right: 50px solid transparent;}
+			.div14{width: 120px;height: 80px;background: red;border-radius: 8px;margin: 0 auto;position: relative;}
+			.div14:before{width: 0;height: 0;content: "";border: 13px solid transparent;border-left: none;border-right: 26px solid red;position: absolute;left: -26px;top: 26px;}
+			.div15{width: 100px;height: 100px;background: red;margin: 60px auto;position: relative;}
+			.div15:before,.div15:after{content: "";width: 100px;height: 100px;background: red;transform: rotate(30deg);position: absolute;}
+			.div15:after{transform: rotate(60deg);}
+			.div16{width: 100px;height: 100px;background: red;position: relative;margin: 30px auto;transform: rotate(70deg);transform-origin: 50% 50%;}
+			.div16:after{content: "";width: 100px;height: 100px;background: red;position: absolute;transform: rotate(-45deg);transform-origin: 50% 50%;}
+			.div17{width: 0;height: 0;border: 50px solid transparent;border-bottom: none;border-top: 70px solid red;position: relative;}
+			.div17:before{content: "";width: 50px;border: 25px solid transparent;border-top: none;border-bottom: 25px solid red;position: absolute;top: -95px;left: -50px;}
+			.div18{width: 96px;height: 48px;background: #eee;border-color: red;border-width: 2px 2px 50px 2px;border-style: solid;border-radius: 100%;margin: 0 auto;position: relative;}
+			.div18:before{content: "";width: 12px;height: 12px;position: absolute;border: 18px solid red;background: #eee;border-radius:100%;top: 50%;left: 0;}
+			.div18:after{content: "";width: 12px;height: 12px;position: absolute;border: 18px solid #eee;background: red;border-radius: 100%;top: 50%;left: 50%;}
+		</style>
+	</head>
+	<body>
+		<div class="div01"></div>
+		<div class="div02"></div>
+		<div class="div03"></div><!--梯形-->
+		<div class="div04"></div><!--平行四边形-->
+		<div class="div05"></div><!--六边形-->
+		<div class="div06"></div><!--五角星-->
+		<div class="div07"></div><!--五角大楼-->
+		<div class="div08"></div><!--六边形-->
+		<div class="div09"></div><!--八角形-->
+		<div class="div10"></div><!--心形-->
+		<div class="div11"></div><!--无穷形状-->
+		<div class="div12"></div><!--鸡蛋-->
+		<div class="div13"></div><!--食逗人-->
+		<div class="div14"></div><!--提示对话框-->
+		<div class="div15"></div><!--十二角星-->
+		<div class="div16"></div><!--八角形-->
+		<div class="div17"></div><!--钻石-->
+		<div class="div18"></div><!--八卦图-->
+	</body>
+</html>
